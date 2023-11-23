@@ -21,3 +21,4 @@ lazygit
 ripgrep
 exa
 bat
+gh
