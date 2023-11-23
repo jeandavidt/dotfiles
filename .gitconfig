@@ -1,0 +1,5 @@
+[user]
+	email = jeandavidt@gmail.com
+	name = Jean-David Therrien
+[pull]
+	rebase = true
