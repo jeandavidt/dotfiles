@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    
+
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
@@ -40,7 +40,7 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       security.pam.enableSudoTouchIdAuth = true;
-      
+
       system.defaults = {
       dock.autohide = true;
       finder.ShowPathbar = true;
@@ -106,7 +106,7 @@
         "transmission"
         "cleanupbuddy"
         "teamviewer"
-        ""
+
 
       ];
       homebrew.masApps = {
