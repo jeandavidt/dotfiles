@@ -14,7 +14,7 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.vim
+        [ pkgs.wget
 
         ];
 
@@ -46,9 +46,8 @@
       finder.ShowPathbar = true;
       finder.ShowStatusBar = true;
       finder.AppleShowAllExtensions = true;
-      screencapture.location = "/Pictures/Screenshots";
+      screencapture.location = "~/Desktop";
       finder.FXPreferredViewStyle = "Nlsv";
-      # default Finder list item size large
       };
       homebrew.enable = true;
       homebrew.onActivation.autoUpdate = true;
@@ -87,6 +86,7 @@
         "slack"
         "wezterm"
         "zoom"
+        "font-iosevka"
         "zotero"
         "arc"
         "notion"
@@ -105,17 +105,18 @@
         "vanilla"
         "transmission"
         "cleanupbuddy"
+        "teamviewer"
+        ""
 
       ];
       homebrew.masApps = {
-         "Adobe Lightroom" = 1451544217;
+        "Adobe Lightroom" = 1451544217;
         "Elmedia Video Player" = 1044549675;
         "Day One" = 1055511498;
         "Kindle" = 302584613;
         "Flow" = 1423210932;
         "Amphetamine" = 937984704;
       };
-
     };
   in
   {
