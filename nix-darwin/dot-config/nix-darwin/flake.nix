@@ -77,6 +77,8 @@
         "tree"
         "unixodbc"
         "zoxide"
+        "blackhole-2ch"
+        "node"
       ];
       homebrew.casks = [
         "1password"
@@ -106,8 +108,6 @@
         "transmission"
         "cleanupbuddy"
         "teamviewer"
-
-
       ];
       homebrew.masApps = {
         "Adobe Lightroom" = 1451544217;
