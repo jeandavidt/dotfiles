@@ -33,9 +33,8 @@ config.window_padding = {
 	bottom = "1cell",
 }
 config.font = wezterm.font({
-	family = "Iosevka",
-	stretch = "Expanded",
-	--weight = "Bold",
+	family = "JetBrainsMono Nerd Font",
+	weight = "Thin",
 })
 
 config.font_size = 15
