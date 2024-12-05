@@ -3,3 +3,17 @@
 	name = Jean-David Therrien
 [pull]
 	rebase = true
+
+[alias]
+  # *********************
+  # Rebase workflow
+    mainbranch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+    # rebase the current branch onto the remote's current main branch state
+    synced = "!git pull origin $(git mainbranch) --rebase"
+    # put your commits after the commits found on the feature branch on the remote 
+    update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
+    # make your small commits into a few consolidated ones
+    squash = "!git rebase -v -i $(git mainbranch)"
+    # send the feature branch over to the origin
+    publish = push origin HEAD --force-with-lease
+    pub = publish
