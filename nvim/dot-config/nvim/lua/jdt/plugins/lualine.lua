@@ -1,25 +1,59 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    local lualine = require("lualine")
-    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		local lualine = require("lualine")
+		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
+		-- configure lualine with modified theme
+		lualine.setup({
+			options = {
+				icons_enabled = true,
+				theme = "auto",
+				component_separators = { left = "|", right = "|" }, -- "", right = "" },
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = {
+					statusline = {},
+					winbar = {},
+				},
+				ignore_focus = {},
+				always_divide_middle = true,
+				globalstatus = false,
+				refresh = {
+					statusline = 1000,
+					tabline = 1000,
+					winbar = 1000,
+				},
+			},
+			sections = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = { "filename" },
+				lualine_x = {
+					{
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+					},
+					--{ "encoding" },
 
-    -- configure lualine with modified theme
-    lualine.setup({
-      options = {theme = "catppuccin",},
-      sections = {
-        lualine_x = {
-          {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-          },
-          { "encoding" },
-          { "fileformat" },
-          { "filetype" },
-        },
-      },
-    })
-  end,
+					{ "filetype" },
+					--{ "fileformat" },
+				},
+				lualine_y = {}, --"progress" },
+				lualine_z = { "location" },
+			},
+			inactive_sections = {
+				lualine_a = {},
+				lualine_b = {},
+				lualine_c = { "filename" },
+				lualine_x = { "location", "encoding", "fileformat" },
+				lualine_y = {},
+				lualine_z = {},
+			},
+			tabline = {},
+			winbar = {},
+			inactive_winbar = {},
+			extensions = {},
+		})
+	end,
 }

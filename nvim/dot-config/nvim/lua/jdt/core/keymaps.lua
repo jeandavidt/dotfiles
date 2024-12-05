@@ -5,8 +5,25 @@ local keymap = vim.keymap -- for conciseness
 local nnoremap = function(key, value)
 	keymap.set("n", key, value, { noremap = true, silent = true })
 end
+
 ---------------------
 -- General Keymaps -------------------
+
+-- spelling
+keymap.set("i", "<C-l>", "<ESC>[s1z=`]a")
+
+-- custom mappings for spell checking
+-- Add word to English spelling
+nnoremap("zge", ":setlocal spelllang=en<CR>zg:setlocal spelllang=en,fr<CR>")
+
+-- Add word to French spelling
+nnoremap("zgf", ":setlocal spelllang=fr<CR>zg:setlocal spelllang=en,fr<CR>")
+
+-- Mark word as bad in English spelling
+nnoremap("zbe", ":setlocal spelllang=en<CR>zb:setlocal spelllang=en,fr<CR>")
+
+-- Mark word as bad in French spelling
+nnoremap("zbf", ":setlocal spelllang=fr<CR>zb:setlocal spelllang=en,fr<CR>")
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
@@ -34,6 +51,8 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- navigation
 nnoremap("<C-h>", "<C-w>h")
 nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")
@@ -43,4 +62,3 @@ nnoremap("<C-d>", "<C-d>zz")
 nnoremap("gg", "gg^")
 nnoremap("G", "G$")
 nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")

@@ -29,7 +29,6 @@ return {
 			ensure_installed = {
 				"html",
 				"lua_ls",
-				"pyright",
 				"texlab",
 			},
 		})
@@ -38,11 +37,9 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
 				"latexindent", -- latex formatter
-				"pylint", -- python linter
 				"eslint_d", -- js linter
+				"ruff", -- python linter formatter
 			},
 		})
 	end,

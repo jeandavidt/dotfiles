@@ -41,3 +41,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+--spell check
+opt.spelllang = { "en_gb", "fr" }
+opt.spell = true
