@@ -39,7 +39,7 @@ return {
 				"stylua", -- lua formatter
 				"latexindent", -- latex formatter
 				"eslint_d", -- js linter
-				"ruff", -- python linter formatter
+				"ruff", -- python
 			},
 		})
 	end,
