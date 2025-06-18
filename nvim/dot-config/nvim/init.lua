@@ -1,3 +1,2 @@
-require("jdt.core")
-require("jdt.lazy")
-require("jdt.workflows")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

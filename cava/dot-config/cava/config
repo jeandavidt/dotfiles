@@ -175,13 +175,13 @@ gradient_color_7 = '#e78284'
 
 [smoothing]
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-monstercat = 1
+monstercat = 0
 waves = 0
 
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 77
+noise_reduction = 40 #77
 
 
 [eq]
@@ -189,6 +189,6 @@ noise_reduction = 77
 # This one is tricky. You can have as much keys as you want.
 # Remember to uncomment more than one key! More keys = more precision.
 # Look at readme.md on github for further explanations and examples.
-1 = 1 # bass
-2 = 0.75 # midtone
-3 = 0.5 # treble
+#1 = 1 # bass
+#2 = 0.75 # midtone
+#3 = 0.5 # treble
