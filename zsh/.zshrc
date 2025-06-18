@@ -97,6 +97,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 
 # Alisases
 alias ls=eza
+alias tree='eza --tree --level=3  --group-directories-first --classify'
 alias cat=bat
 
 obsi (){
